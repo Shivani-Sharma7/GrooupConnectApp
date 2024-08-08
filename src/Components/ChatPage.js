@@ -21,7 +21,6 @@ const ChatPage = () => {
     };
 
     useEffect(()=>{
-        
         const socket=new WebSocket('https://groupconnect-backend.onrender.com');
         setWs(socket);
         socket.onopen=()=>{
@@ -51,9 +50,11 @@ const ChatPage = () => {
     const handleSendMessage = (e) => {
         e.preventDefault();
         const userMessage=document.getElementById('send_message').value;
-        append(`You: ${userMessage}`,'right');
-        ws.send(JSON.stringify({type: 'send', message: userMessage, username: userName }));
-        document.getElementById('send_message').value='';
+        if (userMessage){
+            append(`You: ${userMessage}`,'right');
+            ws.send(JSON.stringify({type: 'send', message: userMessage, username: userName }));
+            document.getElementById('send_message').value='';
+        }
     }
 
     return (
