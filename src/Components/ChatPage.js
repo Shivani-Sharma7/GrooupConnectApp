@@ -11,7 +11,7 @@ const ChatPage = () => {
         const messageContainer=document.querySelector('.chat_box');
         const messageElement=document.createElement('div');
         messageElement.innerText=message;
-        if (position == 'right'){
+        if (position === 'right'){
             messageElement.classList.add('message_send');
         } else {
             messageElement.classList.add('message_receive');
@@ -22,7 +22,7 @@ const ChatPage = () => {
 
     useEffect(()=>{
         
-        const socket=new WebSocket('ws://localhost:8080');
+        const socket=new WebSocket('https://groupconnect-backend.onrender.com');
         setWs(socket);
         socket.onopen=()=>{
             const name=prompt('Enter your name to join: ');
