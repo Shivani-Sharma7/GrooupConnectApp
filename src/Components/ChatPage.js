@@ -50,11 +50,13 @@ const ChatPage = () => {
     const handleSendMessage = (e) => {
         e.preventDefault();
         const userMessage=document.getElementById('send_message').value;
-        if (userMessage){
+        if (userMessage && userName){
             append(`You: ${userMessage}`,'right');
             ws.send(JSON.stringify({type: 'send', message: userMessage, username: userName }));
             document.getElementById('send_message').value='';
-        }
+        } else if (!userName) {
+            alert('You are not registered. Please refresh!!!');
+        } 
     }
 
     return (
@@ -66,9 +68,7 @@ const ChatPage = () => {
                 <Row>
                     <Col md="2"></Col>
                     <Col md="8">
-                        <div className='chat_box'>
-                            
-                        </div>
+                        <div className='chat_box'></div>
                         <Form className='form_group' id='send-container' >
                             <Form.Group className="mb-2 d-flex align-items-center">
                                 <Form.Control type="text" name="send_message" id="send_message" placeholder='Type your message...' />
