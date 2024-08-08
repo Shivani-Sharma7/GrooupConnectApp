@@ -34,7 +34,7 @@ const ChatPage = () => {
         socket.onmessage = (event) => {
             const data=JSON.parse(event.data);
             const name=startCase(data.name);
-            if (data.name !== null){
+            if (data.name !== null && data.name !== '' ){
                 if (data.type === 'user-joined') {
                     append(`${name} joined the chat`,'right');
                 } else if (data.type === 'receive') {
