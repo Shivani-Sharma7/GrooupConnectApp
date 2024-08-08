@@ -66,15 +66,10 @@ const ChatPage = () => {
                     <Col md="2"></Col>
                     <Col md="8">
                         <div className='chat_box'>
+                            
                         </div>
-                    </Col>
-                    <Col md="2"></Col>
-                </Row>
-                <Row>
-                    <Col md="2"></Col>
-                    <Col md="8">
-                        <Form className='form_group' id='send-container'>
-                            <Form.Group className="mb-2">
+                        <Form className='form_group' id='send-container' >
+                            <Form.Group className="mb-2 d-flex align-items-center">
                                 <Form.Control type="text" name="send_message" id="send_message" placeholder='Type your message...' />
                             </Form.Group>
                             <Form.Group className="mb-3">
@@ -84,6 +79,7 @@ const ChatPage = () => {
                     </Col>
                     <Col md="2"></Col>
                 </Row>
+                
             </Container>
         </>
     )

@@ -9,37 +9,40 @@ body{
     flex-direction: column;
     justify-content: flex-end;
     margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     background-color: white !important;
     border: 2px solid white !important;
     border-radius: 10px;
-    overflow-y: auto !important;
     flex-grow: 1 !important;
     background-image: url('./chat_background.jpg');
     background-size: cover; 
     background-position: center;
+    overflow-y: auto !important; 
+    overflow-x: hidden; 
 }
-
-/* .chat_box_content {
-    flex-grow: 1;
-    overflow-y: auto; 
-    padding: 10px;
-} */
 
 h1{
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
-
-.form_group{
+.form_group {
     display: flex;
     gap: 15px;
+    margin: auto;
+    
 }
-
+ 
+/* Default styling for larger screens (desktop) */
 #send_message {
     flex: 1;
     width: 780px;
     margin-left: 2px;
+}
+
+@media (max-width: 768px) {
+    #send_message {
+        width: 300px; 
+    }
 }
 
 .send_button { 
@@ -47,6 +50,7 @@ h1{
     color: white;
     width: 60px;
     border-color: white !important;
+    margin-top: 10px;
 }
 
 .heading {
@@ -56,25 +60,27 @@ h1{
 .message_receive {
     background-color: rgb(180, 180, 170);
     width: 24%;
-    padding: 10px;
-    margin: 17px 12px;
+    padding: 6px;
+    margin: 10px 17px;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     justify-content: left;
     color: black;
+    padding-left: 10px;
 }
 
 .message_send {
     background-color: rgb(129, 212, 155);
     width: 24%;
-    padding: 10px;
-    margin: 17px 12px;
+    padding: 6px;
+    margin: 10px 17px;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 15px;
     display: flex;
     justify-content: left;
     color: black;
+    padding-left: 10px;
 }
 
 
